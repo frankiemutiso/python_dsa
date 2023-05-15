@@ -27,12 +27,14 @@ class Sort:
         return lst
 
     def bubble_sort(self, lst):
-        # Using a for loop, iterate through the list
-        # An inner array iterates through the list and compares two adjacent items
-        # If the left item is greater than right item, swap them
-        # By the time the inner loop is complete the largest item in the array should be to the right
-        # To avoid redudancy, the end index of the inner array keeps getting smaller as right most items are sorted
-        # Repeat until the whole list is sorted
+        """
+        1. Use two loops to iterate through the list
+        2. The outer loop determines the number of iterations
+        3. The number of iterations in the inner loop reduce as the number of iterations in the outer loop increase
+        4. An if condition in the inner loop compares 2 adjacent items
+        5. If the item on the left is greate than item on the right, swap the items
+        6. Repeat until the whole list is sorted
+        """
 
         for i in range(len(lst)):
             for j in range(0, len(lst) - i - 1):
