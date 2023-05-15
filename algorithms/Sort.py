@@ -29,11 +29,12 @@ class Sort:
     def bubble_sort(self, lst):
         """
         1. Use two loops to iterate through the list
-        2. The outer loop determines the number of iterations
-        3. The number of iterations in the inner loop reduce as the number of iterations in the outer loop increase
-        4. An if condition in the inner loop compares 2 adjacent items
-        5. If the item on the left is greate than item on the right, swap the items
-        6. Repeat until the whole list is sorted
+        - The outer loop determines the number of iterations
+        - The number of iterations in the inner loop reduce as the number of iterations in the outer loop increase
+        - The iterations on the inner loop reduce because the assumption is that right most items are sorted
+        2. An if condition in the inner loop compares two adjacent items
+        3. If the item on the left is greater than item on the right, swap the items
+        4. Repeat until the whole list is sorted
         """
 
         for i in range(len(lst)):
