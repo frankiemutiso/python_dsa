@@ -3,25 +3,28 @@ class Sort:
         pass
 
     def insertion_sort(self, lst):
-        # Using a for loop, iterate through the list
+        """
+        Steps:
+        1. Start with the second element of the list (index 1).
+        2. Store the current item in a variable called 'item'.
+        3. Initialize a variable 'index' to 0.
+        4. Iterate over the sorted section of the list (from the current item's position - 1 to the beginning of the list) in reverse order.
+            5. Compare each element in the sorted section with the 'item'.
+            6. If the element is larger than the 'item', shift it one position to the right.
+            7. If the element is smaller or equal to the 'item', set 'index' to the position where the 'item' should be inserted (current element's position + 1) and break the loop.
+        8. Set the element at 'index' in the list to the 'item'.
+        9. Repeat steps 2-8 for each remaining element in the list.
+        10. Return the sorted list.
+        """
         for i in range(1, len(lst)):
-            # Store the current item to be inserted at the right place
             item = lst[i]
-            # Initialize a variable to keep track of the index to insert the current item
             index = 0
-            # Using a for loop iterate through items on the left of the current item
-            # Iterate the array on reverse because it's easier to shift elements to the right
             for j in range(i - 1, -1, -1):
-                # If the current item in the inner array is greater than the current item
                 if lst[j] > item:
-                    # Shift the item one index to the right to make space for the current item
                     lst[j + 1] = lst[j]
-                # else, get the current index in the inner array and break the inner loop
-                # because we found the correct index to insert the current item
                 else:
                     index = j + 1
                     break
-            # insert the item in the correct index in the array
             lst[index] = item
 
         return lst
@@ -45,3 +48,30 @@ class Sort:
                     lst[j + 1] = temp
 
         return lst
+
+    def selection_sort(self, lst):
+        """
+        1. Begin by initializing a for loop to keep track of the number of steps.
+        2. In order to determine the index of the smallest item, assign the current step as the index.
+        3. Next, set up an inner loop to compare the items in the list with the smallest item.
+        4. If the current item in the inner loop is smaller than the current smallest item, update the index of the smallest item.
+        5. Once the inner loop terminates, swap the smallest item with the item at the current iteration in the outer loop.
+        6. Repeat these steps until the list is fully sorted.
+        """
+        for step in range(0, len(lst)):
+            smallest_idx = step
+
+            for j in range(step + 1, len(lst)):
+                if lst[j] < lst[smallest_idx]:
+                    smallest_idx = j
+
+            temp = lst[step]
+            lst[step] = lst[smallest_idx]
+            lst[smallest_idx] = temp
+
+        return lst
+
+
+lst = [20, 12, 10, 15, 2]
+
+print(Sort().selection_sort(lst))
