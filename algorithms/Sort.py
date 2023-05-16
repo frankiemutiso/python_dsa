@@ -70,8 +70,3 @@ class Sort:
             lst[smallest_idx] = temp
 
         return lst
-
-
-lst = [20, 12, 10, 15, 2]
-
-print(Sort().selection_sort(lst))
