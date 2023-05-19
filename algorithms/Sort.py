@@ -16,6 +16,7 @@ class Sort:
         9. Repeat steps 2-8 for each remaining element in the list.
         10. Return the sorted list.
         """
+        
         for i in range(1, len(lst)):
             item = lst[i]
             index = 0
@@ -70,3 +71,15 @@ class Sort:
             lst[smallest_idx] = temp
 
         return lst
+
+    def quick_sort():
+        """
+        1. Select a pivot element - preferably last item
+        2. Iterate throught the list and check if there is an element smaller than pivot element
+        3. For the first element greater than pivot element, get its index
+        4. Iterate the array looking for an item smaller than pivot element
+        - If found, swap the element with greater element index, if not found swap it with pivot element
+        5. Move the greater element index to the next item that is greater than pivot element and repeat step 4
+        """
+        
+        pass
